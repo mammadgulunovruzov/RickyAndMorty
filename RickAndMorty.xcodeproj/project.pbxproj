@@ -18,7 +18,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		B5E050352DAE76C30042055A /* Exceptions for "RickyAndMorty" folder in "RickAndMorty" target */ = {
+		B5E050352DAE76C30042055A /* Exceptions for "RickAndMorty" folder in "RickAndMorty" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -28,12 +28,12 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		B5E050252DAE76C10042055A /* RickyAndMorty */ = {
+		B5E050252DAE76C10042055A /* RickAndMorty */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				B5E050352DAE76C30042055A /* Exceptions for "RickyAndMorty" folder in "RickAndMorty" target */,
+				B5E050352DAE76C30042055A /* Exceptions for "RickAndMorty" folder in "RickAndMorty" target */,
 			);
-			path = RickyAndMorty;
+			path = RickAndMorty;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -62,7 +62,7 @@
 		B5E0501A2DAE76C10042055A = {
 			isa = PBXGroup;
 			children = (
-				B5E050252DAE76C10042055A /* RickyAndMorty */,
+				B5E050252DAE76C10042055A /* RickAndMorty */,
 				B5E050242DAE76C10042055A /* Products */,
 				0AB0D36A3F4DDD491E772718 /* Pods */,
 				EB5FFC4C246480DDF03CC36B /* Frameworks */,
@@ -103,7 +103,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				B5E050252DAE76C10042055A /* RickyAndMorty */,
+				B5E050252DAE76C10042055A /* RickAndMorty */,
 			);
 			name = RickAndMorty;
 			productName = RickyAndMorty;
@@ -218,7 +218,7 @@
 				DEVELOPMENT_TEAM = JD8A246YTB;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RickyAndMorty/Info.plist;
+				INFOPLIST_FILE = RickAndMorty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -229,7 +229,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mammadgulu.RickyAndMorty;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mammadgulu.RickAndMorty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -248,7 +248,7 @@
 				DEVELOPMENT_TEAM = JD8A246YTB;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RickyAndMorty/Info.plist;
+				INFOPLIST_FILE = RickAndMorty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -259,7 +259,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mammadgulu.RickyAndMorty;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mammadgulu.RickAndMorty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
