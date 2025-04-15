@@ -11,19 +11,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B5E050232DAE76C10042055A /* RickyAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickyAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5E050232DAE76C10042055A /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD405C1C886FE59E8419616B /* Pods-RickyAndMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickyAndMorty.release.xcconfig"; path = "Target Support Files/Pods-RickyAndMorty/Pods-RickyAndMorty.release.xcconfig"; sourceTree = "<group>"; };
 		D4C95EE70840EEFF2A0ED950 /* Pods-RickyAndMorty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickyAndMorty.debug.xcconfig"; path = "Target Support Files/Pods-RickyAndMorty/Pods-RickyAndMorty.debug.xcconfig"; sourceTree = "<group>"; };
 		FD75A7ADBCBD5B3D3848AD07 /* Pods_RickyAndMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickyAndMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		B5E050352DAE76C30042055A /* Exceptions for "RickyAndMorty" folder in "RickyAndMorty" target */ = {
+		B5E050352DAE76C30042055A /* Exceptions for "RickyAndMorty" folder in "RickAndMorty" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = B5E050222DAE76C10042055A /* RickyAndMorty */;
+			target = B5E050222DAE76C10042055A /* RickAndMorty */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -31,7 +31,7 @@
 		B5E050252DAE76C10042055A /* RickyAndMorty */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				B5E050352DAE76C30042055A /* Exceptions for "RickyAndMorty" folder in "RickyAndMorty" target */,
+				B5E050352DAE76C30042055A /* Exceptions for "RickyAndMorty" folder in "RickAndMorty" target */,
 			);
 			path = RickyAndMorty;
 			sourceTree = "<group>";
@@ -72,7 +72,7 @@
 		B5E050242DAE76C10042055A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B5E050232DAE76C10042055A /* RickyAndMorty.app */,
+				B5E050232DAE76C10042055A /* RickAndMorty.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,9 +88,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B5E050222DAE76C10042055A /* RickyAndMorty */ = {
+		B5E050222DAE76C10042055A /* RickAndMorty */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5E050362DAE76C30042055A /* Build configuration list for PBXNativeTarget "RickyAndMorty" */;
+			buildConfigurationList = B5E050362DAE76C30042055A /* Build configuration list for PBXNativeTarget "RickAndMorty" */;
 			buildPhases = (
 				F6FB48E0CA099B2AF77796BB /* [CP] Check Pods Manifest.lock */,
 				B5E0501F2DAE76C10042055A /* Sources */,
@@ -105,9 +105,9 @@
 			fileSystemSynchronizedGroups = (
 				B5E050252DAE76C10042055A /* RickyAndMorty */,
 			);
-			name = RickyAndMorty;
+			name = RickAndMorty;
 			productName = RickyAndMorty;
-			productReference = B5E050232DAE76C10042055A /* RickyAndMorty.app */;
+			productReference = B5E050232DAE76C10042055A /* RickAndMorty.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -125,7 +125,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B5E0501E2DAE76C10042055A /* Build configuration list for PBXProject "RickyAndMorty" */;
+			buildConfigurationList = B5E0501E2DAE76C10042055A /* Build configuration list for PBXProject "RickAndMorty" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -139,7 +139,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B5E050222DAE76C10042055A /* RickyAndMorty */,
+				B5E050222DAE76C10042055A /* RickAndMorty */,
 			);
 		};
 /* End PBXProject section */
@@ -389,7 +389,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B5E0501E2DAE76C10042055A /* Build configuration list for PBXProject "RickyAndMorty" */ = {
+		B5E0501E2DAE76C10042055A /* Build configuration list for PBXProject "RickAndMorty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5E050392DAE76C30042055A /* Debug */,
@@ -398,7 +398,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5E050362DAE76C30042055A /* Build configuration list for PBXNativeTarget "RickyAndMorty" */ = {
+		B5E050362DAE76C30042055A /* Build configuration list for PBXNativeTarget "RickAndMorty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5E050372DAE76C30042055A /* Debug */,
