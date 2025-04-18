@@ -34,86 +34,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func getData() {
-        let randomIds = (1...826).shuffled().prefix(10)
-        let idString = randomIds.map { String($0) }.joined(separator: ",")
-        let urlString = "https://rickandmortyapi.com/api/character/\(idString)"
-        
-        guard let url = URL(string: urlString) else { return }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Error!", message: error.localizedDescription, preferredStyle: .alert)
-                    let okButton = UIAlertAction(title: "OK", style: .default)
-                    alert.addAction(okButton)
-                    self.present(alert, animated: true)
-                }
-                return
-            }
-            
-            if let data = data {
-                do {
-                    if let jsonArray = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
-                        
-                        var newCharacters: [Character] = []
-                        let dispatchGroup = DispatchGroup()
-                        
-                        for item in jsonArray {
-                            if let id = item["id"] as? Int,
-                               let name = item["name"] as? String,
-                               let image = item["image"] as? String,
-                               let species = item["species"] as? String,
-                               let status = item["status"] as? String,
-                               let locationDict = item["location"] as? [String: Any],
-                               let location = locationDict["name"] as? String,
-                               let episodeArray = item["episode"] as? [String],
-                               let firstEpisodeUrl = episodeArray.first,
-                               let episodeUrl = URL(string: firstEpisodeUrl) {
-                                
-                                dispatchGroup.enter()
-                                
-                                URLSession.shared.dataTask(with: episodeUrl) { episodeData, _, _ in
-                                    var episodeName = "Unknown"
-                                    
-                                    if let episodeData = episodeData {
-                                        if let episodeJSON = try? JSONSerialization.jsonObject(with: episodeData, options: []) as? [String: Any],
-                                           let fetchedEpisodeName = episodeJSON["name"] as? String {
-                                            episodeName = fetchedEpisodeName
-                                        }
-                                    }
-                                    
-                                    let character = Character(
-                                        id: id,
-                                        name: name,
-                                        status: status,
-                                        species: species,
-                                        image: image,
-                                        location: location,
-                                        firstSeenEpisode: episodeName
-                                    )
-                                    
-                                    DispatchQueue.main.async {
-                                        newCharacters.append(character)
-                                        dispatchGroup.leave()
-                                    }
-                                    
-                                }.resume()
-                            }
-                        }
-                        
-                        dispatchGroup.notify(queue: .main) {
-                            self.characters = newCharacters
-                            self.tableView.reloadData()
-                        }
-                    }
+        NetworkManager.shared.fetchRandomCharacters { [weak self] newCharacters in
+                    guard let self = self else { return }
                     
-                } catch {
-                    print("JSON parsing error: \(error.localizedDescription)")
+                    self.characters = newCharacters
+                    self.tableView.reloadData()
+                    
+                    // If there was an error and no characters were fetched, show an alert
+                    if newCharacters.isEmpty {
+                        let alert = UIAlertController(title: "Error!", message: "Failed to load characters", preferredStyle: .alert)
+                        let okButton = UIAlertAction(title: "OK", style: .default)
+                        alert.addAction(okButton)
+                        self.present(alert, animated: true)
+                    }
                 }
-            }
-        }
-        
-        task.resume()
     }
     
     
@@ -132,11 +66,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.contentView.layer.cornerRadius = 16
         cell.contentView.layer.masksToBounds = true
         
-        // Set a placeholder image
-        if let imageUrl = URL(string: character.image) {
-            cell.charachterImageView.sd_cancelCurrentImageLoad()
-            cell.charachterImageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(systemName: "person.fill"))
-        }
+        cell.charachterImageView.loadImageFromURL(urlString: character.image)
+
         
         let status = character.status.lowercased()
         let color: UIColor = status == "dead" ? .red : status == "alive" ? .green : .gray
@@ -155,19 +86,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.statusSpeciesLabel.attributedText = text
 
         
-        //        // Load image asynchronously
-        //        if let imageUrl = URL(string: character.image) {
-        //            URLSession.shared.dataTask(with: imageUrl) { data, response, error in
-        //                if let data = data, let image = UIImage(data: data) {
-        //                    DispatchQueue.main.async {
-        //                        if let currentIndexPath = tableView.indexPath(for: cell),
-        //                           currentIndexPath == indexPath {
-        //                            cell.charachterImageView.image = image
-        //                        }
-        //                    }
-        //                }
-        //            }.resume()
-        //        }
+                // Load image asynchronously
+                if let imageUrl = URL(string: character.image) {
+                    URLSession.shared.dataTask(with: imageUrl) { data, response, error in
+                        if let data = data, let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                if let currentIndexPath = tableView.indexPath(for: cell),
+                                   currentIndexPath == indexPath {
+                                    cell.charachterImageView.image = image
+                                }
+                            }
+                        }
+                    }.resume()
+                }
         
         
         

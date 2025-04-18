@@ -17,8 +17,7 @@ class CharacterCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // 📦 Card background using #3c3e44
-        contentView.backgroundColor = UIColor(red: 60/255, green: 62/255, blue: 68/255, alpha: 1)
+        contentView.backgroundColor = UIColor.surface
         contentView.layer.cornerRadius = 18
         contentView.layer.masksToBounds = true
         backgroundColor = .clear
@@ -27,12 +26,11 @@ class CharacterCell: UITableViewCell {
         charachterImageView.layer.cornerRadius = 8
         charachterImageView.clipsToBounds = true
         
-       
-
+        nameLabel.textColor = UIColor.textLabel
+        statusSpeciesLabel.textColor = .textLabel
+        lastLocationLabel.textColor = .textLabel
+        firstSeenLocationLabel.textColor = .textLabel
         
-        
-        
-       
         
     }
     
@@ -46,13 +44,9 @@ class CharacterCell: UITableViewCell {
     }
 
     
-    
-    
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        // Configure the view for the selected state
     }
     
     
